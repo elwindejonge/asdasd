@@ -1,0 +1,50 @@
+h3 {
+    margin-bottom: 10px;
+}
+
+body {
+    background-color: #6f6f6f;
+}
+
+
+.navbar {
+    border-bottom: 4px solid red;
+}
+
+.panels {
+    margin-top: 100px;
+    margin-left: 375px;
+    margin-right: 375px;
+    height: 75px;
+}
+
+.panel-1 {
+    margin-top: 75px;
+    margin-left: 325px;
+    width: 1250px;
+}
+
+.genres {
+    width: 300px;
+    margin-left: 25px;
+    margin-top: -75px;
+    position: fixed;
+}
+
+.got-thumbnail {
+    width: 700px;
+    margin-left: 1600px;
+    position: fixed;
+    float: right;
+}
+
+.agenda-info {
+    margin-left: 25px;
+    margin-top: 520px;
+    width: 950px;
+    position: fixed;
+}
+
+.modal-dialog {
+    margin-top: 75px;
+}
