@@ -8,6 +8,7 @@
 include('app/database.php');
 //if submit is not blanked i.e. it is clicked
 if(isset($_REQUEST['submit'])!='')
+
 {
     if($_REQUEST['name']=='' || $_REQUEST['email']=='' || $_REQUEST['password']=='')
     {

@@ -31,7 +31,7 @@ if(isset($_SESSION['username'])) {
 
 <head>
     <meta charset="UTF-8">
-    <title>film forum | Login</title>
+    <title>TV forum | Login</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/style.css">
 
@@ -39,31 +39,27 @@ if(isset($_SESSION['username'])) {
 
 <body>
 
-<div class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container">
-        <div class="navbar-header">
-            <a href="#" class="navbar-brand">Film forum</a>
-            <button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-        </div>
-        <div class="collapse navbar-collapse navHeaderCollapse">
-
-            <ul class="nav navbar-nav navbar-right">
-
-                <li><a href="index.html">Home/Nieuws</a></li>
-                <li><a href="series.html">TV series</a></li>
-                <li><a href="#">Films</a></li>
-                <li><a href="#">Mijn favorieten</a></li>
-                <li><a href="#">Aanmelden</a></li>
-                <li class="active"><a href="login.html">Inloggen</a></li>
-
-            </ul>
+    <div class="navbar navbar-inverse navbar-fixed-top"> <!--NAVBAR-->
+        <div class="container">
+            <div class="navbar-header">
+                <a href="index.php" class="navbar-brand">TV forum</a>
+                <button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse navHeaderCollapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="effect"><a href="index.php">Home/Nieuws</a></li>
+                    <li class="effect"><a href="series.php">TV series</a></li>
+                    <li class="effect"><a href="film.php">Films</a></li>
+                    <li class="effect"><a href="aanmelden.php">Aanmelden</a></li>
+                    <li class="active"><a href="login.php">Inloggen</a></li>
+                </ul> <!--EINDE NAVBAR-->
+            </div>
         </div>
     </div>
-</div>
 
 <div class="modal-dialog">
     <div class="modal-content">
@@ -90,7 +86,7 @@ if(isset($_SESSION['username'])) {
                 <?php
             endif;
             ?>
-            <form method="POST" action="app/authenticate.php" class="col-md-12 center-block">
+            <form method="POST" action="app/authenticate.php" class="col-md-12 center-block" id="foutfix">
                 <div class="form-group">
                     <label for="username">Gebruikersnaam</label>
                     <input name="username" type="text" class="form-control input-lg" placeholder="Gebruikersnaam">
@@ -102,7 +98,7 @@ if(isset($_SESSION['username'])) {
                 </div>
                 <div class="form-group">
                     <input type="submit" class="btn btn-block btn-lg btn-primary" value="Inloggen">
-                    <span class="pull-right"><a href="#">Aanmelden</a></span><span><a href="#">Wachtwoord vergeten?</a></span>
+                    <span class="pull-right"><a href="aanmelden.php">Aanmelden</a></span><span><a href="#">Wachtwoord vergeten?</a></span>
                 </div>
             </form>
             <div class="modal-footer">
@@ -115,8 +111,10 @@ if(isset($_SESSION['username'])) {
 </div>
 
 
-<script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
-<script src="js/script.js"></script>
+    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
 </body>
 
 </html>

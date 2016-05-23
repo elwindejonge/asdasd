@@ -1,0 +1,35 @@
+body {
+    background-color: #999999;
+}
+
+
+.effect:hover  {
+    background-color: #101010;
+    transition: all 0.3s ease 0s;
+    color: #FFFFFF;
+}
+
+li.active:after {
+    content: "";
+    height: 2px;
+    width: 100%;
+    background: #00a3cc;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.navbar {
+    border-bottom: 2px solid #00a3cc;
+}
+
+.panel-default {
+    margin-top: 100px;
+    margin-left: 350px;
+    margin-right: 350px;
+}
+
+.aanmelden-inloggen {
+    float: right;
+}
+

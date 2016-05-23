@@ -76,9 +76,10 @@ if(connectToDatabase()) {
         $_SESSION['id'] = $users['id'];
         $_SESSION['email'] = $users['email'];
         // TODO STAP 2: Doorgaan naar dashboard.php
-        header('Location: ../beheerpanel.php');
+        header('Location: ../loggedin.php');
         exit(0);
-    } else {
+    }
+else {
         /*
          * Login is NIET goedgegaan, de variabele $user is dus gevuld met
          * de waarde null
@@ -96,3 +97,4 @@ if(connectToDatabase()) {
     }
 
 }
+

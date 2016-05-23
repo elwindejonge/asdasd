@@ -3,32 +3,46 @@ h3 {
 }
 
 body {
-    background-color: #6f6f6f;
+    background-color: #999999;
 }
 
+
+.effect:hover  {
+    background-color: #101010;
+    transition: all 0.3s ease 0s;
+    color: #FFFFFF;
+}
+
+li.active:after {
+    content: "";
+    height: 3px;
+    width: 100%;
+    background: #00a3cc;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
 
 .navbar {
-    border-bottom: 4px solid red;
+    border-bottom: 2px solid #00a3cc;
 }
 
-.panels {
-    margin-top: 100px;
-    margin-left: 375px;
-    margin-right: 375px;
+#panels {
+    margin-top: 75px;
     height: 75px;
 }
 
 .panel-1 {
     margin-top: 75px;
-    margin-left: 325px;
-    width: 1250px;
 }
 
-.genres {
-    width: 300px;
-    margin-left: 25px;
+#genres {
     margin-top: -75px;
     position: fixed;
+}
+
+.genres-film {
+    margin-top: 10px;
 }
 
 .got-thumbnail {
@@ -39,12 +53,94 @@ body {
 }
 
 .agenda-info {
-    margin-left: 25px;
     margin-top: 520px;
-    width: 950px;
     position: fixed;
 }
 
 .modal-dialog {
     margin-top: 75px;
 }
+
+.aanmelden {
+    margin-top: 75px;
+}
+
+.news-post {
+    height: 175px;
+}
+
+.niews-foto {
+    float: left;
+
+}
+
+#test {
+    float: right;
+    height: 150px;
+    width: 200px;
+    text-align: center;
+    border-left: 1px solid #ddd;
+}
+
+#test .niews-titel {
+    margin-top: 70px;
+}
+
+#recente-posts {
+    width: 300px;
+    margin-left: 25px;
+    margin-top: -550px;
+}
+
+#recente-posts-title {
+    text-align: center;
+}
+
+.wolkje {
+    float: left;
+    margin-left: 15px;
+}
+
+.tekst-recente-posts {
+    margin-left: 40px;
+}
+
+.panel-info {
+    /*margin-right: 570px;*/
+    /*float: right;*/
+}
+
+#aanmelden-succes {
+    float: right;
+    margin-right: 20px;
+    margin-top: -670px;
+}
+
+#foutfix {
+    float: none;
+}
+
+@media screen and (max-width: 1000px) and (min-width: 320px) {
+    #test {
+        display: none;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    #recente-posts {
+        display: none;
+    }
+
+    img {
+        display: none;
+    }
+
+    #aanmelden-succes {
+        display: none;
+    }
+}
+
+
+

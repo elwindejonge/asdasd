@@ -1,3 +1,15 @@
+<?php
+session_start();
+if(!isset($_SESSION['username']) && !isset($_SESSION['id']) && !isset($_SESSION['email'])) {
+    /*
+     * Er is blijkbaar niet ingelogd, want deze drie sessie variabelen bestaan niet
+     * Dus gaan we terug naar het login formulier
+     */
+    $_SESSION['error_messages'][] = 'Voor het dashboard moet je ingelogd zijn.';
+    header('Location: login.php');
+    exit(0);
+}
+?>
 <!DOCTYPE html>
 <html lang="nl">
 <head>
@@ -15,7 +27,7 @@
 <div class="container">
     <div class="navbar navbar-inverse navbar-fixed-top"> <!--NAVBAR-->
         <div class="container">
-        <div class="navbar-header">
+            <div class="navbar-header">
                 <a href="index.php" class="navbar-brand">TV forum</a>
                 <button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
                     <span class="icon-bar"></span>
@@ -28,8 +40,7 @@
                     <li class="active"><a href="index.php">Home/Nieuws</a></li>
                     <li class="effect"><a href="series.php">TV series</a></li>
                     <li class="effect"><a href="film.php">Films</a></li>
-                    <li class="effect"><a href="aanmelden.php">Aanmelden</a></li>
-                    <li class="effect"><a href="login.php">Inloggen</a></li>
+                    <li><a href="logout.php"><i class="fa fa-sign-out"></i> Uitloggen</a></li>
                 </ul> <!--EINDE NAVBAR-->
             </div>
         </div>
@@ -44,9 +55,9 @@
                         <button type="button" class="list-group-item">
                             <div class="row">
                                 <div class="col-md-2">
-                                        <div class="nieuws-foto">
-                                            <img src="img/got.jpeg" height="150" width="150">
-                                        </div>
+                                    <div class="nieuws-foto">
+                                        <img src="img/got.jpeg" height="150" width="150">
+                                    </div>
                                 </div>
                                 <div class="col-md-7">
                                     <div class="nieuws-titel" id="test1">
@@ -110,81 +121,81 @@
                                 </div>
                             </div>
                         </button>
-                        </div>
                     </div>
                 </div>
-            </div>
-        </div> <!--EIND PANELS-->
-    </div> <!--EIND CONTAINER-->
-
-        <div id="aanmelden-succes">
-            <div class="alert alert-success fade in" role="alert">
-                <strong>Succesvol aangemeld!</strong>
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             </div>
         </div>
+    </div> <!--EIND PANELS-->
+</div> <!--EIND CONTAINER-->
 
-        <div class="col-md-4"> <!--BEGIN RECENTE POSTS-->
-            <div id="recente-posts">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h2 class="panel-title" id="recente-posts-title">recente posts:</h2>
-                    </div>
-                    <div class="panel-body">
-                        <button type="button" class="list-group-item">
-                            <div class="row" id="recente-posts-post">
-                                <div class="wolkje">
-                                    <span class="glyphicon glyphicon-comment"></span>
-                                </div>
-                                <div class="tekst-recente-posts">
-                                    <a href="#">pietergriep reageert op: *naam topic* - *reactie*</a>
-                                </div>
-                            </div>
-                        </button>
-                        <button type="button" class="list-group-item">
-                            <div class="row" id="recente-posts-post">
-                                <div class="wolkje">
-                                    <span class="glyphicon glyphicon-comment"></span>
-                                </div>
-                                <div class="tekst-recente-posts">
-                                    <a href="#">Elwin090 reageert op: *naam topic* - *reactie*</a>
-                                </div>
-                            </div>
-                        </button>
-                        <button type="button" class="list-group-item">
-                            <div class="row" id="recente-posts-post">
-                                <div class="wolkje">
-                                    <span class="glyphicon glyphicon-comment"></span>
-                                </div>
-                                <div class="tekst-recente-posts">
-                                    <a href="#">basanninga reageert op: *naam topic* - *reactie*</a>
-                                </div>
-                            </div>
-                        </button>
-                        <button type="button" class="list-group-item">
-                            <div class="row" id="recente-posts-post">
-                                <div class="wolkje">
-                                    <span class="glyphicon glyphicon-comment"></span>
-                                </div>
-                                <div class="tekst-recente-posts">
-                                    <a href="#">Jens reageert op: *naam topic* - *reactie*</a>
-                                </div>
-                            </div>
-                        </button>
-                        <button type="button" class="list-group-item">
-                            <div class="row" id="recente-posts-post">
-                                <div class="wolkje">
-                                    <span class="glyphicon glyphicon-comment"></span>
-                                </div>
-                                <div class="tekst-recente-posts">
-                                    <a href="#">Johanstr reageert: *naam topic* - *reactie*</a>
-                                </div>
-                            </div>
-                        </button>
-                    </div>
-                </div>
+<div id="aanmelden-succes">
+    <div class="alert alert-success fade in" role="alert">
+        <strong>Succesvol aangemeld!</strong>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    </div>
+</div>
+
+<div class="col-md-4"> <!--BEGIN RECENTE POSTS-->
+    <div id="recente-posts">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h2 class="panel-title" id="recente-posts-title">recente posts:</h2>
             </div>
-        </div> <!--EIND RECENTE POSTS-->
+            <div class="panel-body">
+                <button type="button" class="list-group-item">
+                    <div class="row" id="recente-posts-post">
+                        <div class="wolkje">
+                            <span class="glyphicon glyphicon-comment"></span>
+                        </div>
+                        <div class="tekst-recente-posts">
+                            <a href="#">pietergriep reageert op: *naam topic* - *reactie*</a>
+                        </div>
+                    </div>
+                </button>
+                <button type="button" class="list-group-item">
+                    <div class="row" id="recente-posts-post">
+                        <div class="wolkje">
+                            <span class="glyphicon glyphicon-comment"></span>
+                        </div>
+                        <div class="tekst-recente-posts">
+                            <a href="#">Elwin090 reageert op: *naam topic* - *reactie*</a>
+                        </div>
+                    </div>
+                </button>
+                <button type="button" class="list-group-item">
+                    <div class="row" id="recente-posts-post">
+                        <div class="wolkje">
+                            <span class="glyphicon glyphicon-comment"></span>
+                        </div>
+                        <div class="tekst-recente-posts">
+                            <a href="#">basanninga reageert op: *naam topic* - *reactie*</a>
+                        </div>
+                    </div>
+                </button>
+                <button type="button" class="list-group-item">
+                    <div class="row" id="recente-posts-post">
+                        <div class="wolkje">
+                            <span class="glyphicon glyphicon-comment"></span>
+                        </div>
+                        <div class="tekst-recente-posts">
+                            <a href="#">Jens reageert op: *naam topic* - *reactie*</a>
+                        </div>
+                    </div>
+                </button>
+                <button type="button" class="list-group-item">
+                    <div class="row" id="recente-posts-post">
+                        <div class="wolkje">
+                            <span class="glyphicon glyphicon-comment"></span>
+                        </div>
+                        <div class="tekst-recente-posts">
+                            <a href="#">Johanstr reageert: *naam topic* - *reactie*</a>
+                        </div>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </div>
+</div> <!--EIND RECENTE POSTS-->
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>

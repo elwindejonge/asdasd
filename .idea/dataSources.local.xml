@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="MySQL - nieuwspanel@localhost" uuid="49ee01da-0009-4e82-b0af-e5cd3d5795ba">
+      <secret-storage>master_key</secret-storage>
+      <user-name>root</user-name>
+      <schema-pattern>nieuwspanel.*</schema-pattern>
+      <default-schemas>nieuwspanel.*</default-schemas>
+    </data-source>
+  </component>
+</project>
